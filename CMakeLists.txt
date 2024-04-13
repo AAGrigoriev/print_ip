@@ -1,12 +1,15 @@
 cmake_minimum_required(VERSION 3.28)
 
-project(print_ip LANGUAGES CXX)
+project(project LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(print_ip main.cpp)
+add_executable(project main.cpp)
 
-add_subdirectory(print_ip)
+add_subdirectory(helper)
+add_subdirectory(test)
 
-target_link_libraries(print_ip INTERFACE helper)
+link_libraries(INTERFACE helper)
+
+enable_testing()

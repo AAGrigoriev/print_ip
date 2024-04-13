@@ -38,7 +38,7 @@ requires(std::is_integral_v<T>) void print_ip(T integer,
    @param[in] - T STL container
    @param[in] - out Output stream
 */
-template <has_begin_end T>
+template <not_string_and_has_begin_end T>
 void print_ip(const T& container, std::ostream& out = std::cout) {
   auto iterBeg = container.cbegin();
   for (auto iter = iterBeg; iter != container.end(); ++iter) {
@@ -62,8 +62,6 @@ requires(std::same_as<T, std::string>) void print_ip(
   out << str;
 }
 
-class A {};
-
 /*!
     @brief Print IP
     Print for any type with method cbegin() and cend()
@@ -71,8 +69,16 @@ class A {};
     @param[in] - out Output stream
  */
 template <instantiation_of<std::tuple> T>
-void print_ip(const T& tuple, std::ostream out = std::cout) {
-  // for each tuple
+void print_ip(const T& tuple, std::ostream& out = std::cout) {
+  std::apply(
+      [&out](const auto& first, const auto&... args) {
+        const auto print_elem = [&out](const auto& elem) {
+          std::cout << '.' << elem;
+        };
+        std::cout << first;
+        (print_elem(args), ...);  // print_elem(1), print_elem(2) ...
+      },
+      tuple);
 }
 
 }  // namespace print_ip
