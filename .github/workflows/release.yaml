@@ -36,5 +36,3 @@ jobs:
           asset_path: ./project-0.0.${{ github.run_number }}-Linux.deb
           asset_name: project-0.0.${{ github.run_number }}-Linux.deb
           asset_content_type: application/vnd.debian.binary-package
-      - name: Doxygen as Action
-        uses: dreygur/doxygen@1.0.1
