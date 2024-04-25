@@ -1,5 +1,7 @@
 #include <concepts>
+#include <list>
 #include <string>
+#include <vector>
 
 namespace print_ip {
 
@@ -23,5 +25,9 @@ constexpr bool is_instantiation_of_v<TT<TS...>, TT> = true;
 
 template <class C, template <typename...> class TT>
 concept instantiation_of = is_instantiation_of_v<C, TT>;
+
+template <typename T>
+concept is_vector_or_list =
+    instantiation_of<T, std::vector> || instantiation_of<T, std::list>;
 
 }  // namespace print_ip

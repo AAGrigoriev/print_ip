@@ -35,10 +35,10 @@ requires(std::is_integral_v<T>) void print_ip(T integer,
 /*!
    @brief Print IP
    Print for any type with method cbegin() and cend()
-   @param[in] - T STL container
+   @param[in] - T STL vector or list
    @param[in] - out Output stream
 */
-template <not_string_and_has_begin_end T>
+template <is_vector_or_list T>
 void print_ip(const T& container, std::ostream& out = std::cout) {
   auto iterBeg = container.cbegin();
   for (auto iter = iterBeg; iter != container.end(); ++iter) {
@@ -73,9 +73,9 @@ void print_ip(const T& tuple, std::ostream& out = std::cout) {
   std::apply(
       [&out](const auto& first, const auto&... args) {
         const auto print_elem = [&out](const auto& elem) {
-          std::cout << '.' << elem;
+          out << '.' << elem;
         };
-        std::cout << first;
+        out << first;
         (print_elem(args), ...);  // print_elem(1), print_elem(2) ...
       },
       tuple);

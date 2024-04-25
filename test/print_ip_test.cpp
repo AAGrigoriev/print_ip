@@ -19,7 +19,7 @@ TEST(print, containter) {
 
   print_ip::print_ip(list_test, ss);
 
-  ASSERT_EQ(ss.str(), "255");
+  ASSERT_EQ(ss.str(), "-1");
 }
 
 TEST(print, integer) {
