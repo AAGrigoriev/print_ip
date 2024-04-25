@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>print_ip: print_ip::instantiation_of Concept Reference</title>
+<title>print_ip: print_ip::is_vector_or_list Concept Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -71,17 +71,19 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>print_ip</b></li><li class="navelem"><a class="el" href="conceptprint__ip_1_1instantiation__of.html">instantiation_of</a></li>  </ul>
+<li class="navelem"><b>print_ip</b></li><li class="navelem"><a class="el" href="conceptprint__ip_1_1is__vector__or__list.html">is_vector_or_list</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="headertitle"><div class="title">print_ip::instantiation_of Concept Reference</div></div>
+  <div class="headertitle"><div class="title">print_ip::is_vector_or_list Concept Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <h2 class="groupheader">Concept definition</h2>
-<div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class </span>C, <span class="keyword">template</span>&lt; <span class="keyword">typename</span>... &gt; <span class="keyword">class </span>TT&gt;</div>
-<div class="line">concept print_ip::<a class="code hl_concept" href="conceptprint__ip_1_1instantiation__of.html">instantiation_of</a> =  is_instantiation_of_v&lt;C, TT&gt;</div>
+<div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptprint__ip_1_1is__vector__or__list.html">print_ip::is_vector_or_list</a> = </div>
+<div class="line">    <a class="code hl_concept" href="conceptprint__ip_1_1instantiation__of.html">instantiation_of&lt;T, std::vector&gt;</a> || <a class="code hl_concept" href="conceptprint__ip_1_1instantiation__of.html">instantiation_of&lt;T, std::list&gt;</a></div>
 <div class="ttc" id="aconceptprint__ip_1_1instantiation__of_html"><div class="ttname"><a href="conceptprint__ip_1_1instantiation__of.html">print_ip::instantiation_of</a></div><div class="ttdef"><b>Definition</b> traits.hpp:27</div></div>
+<div class="ttc" id="aconceptprint__ip_1_1is__vector__or__list_html"><div class="ttname"><a href="conceptprint__ip_1_1is__vector__or__list.html">print_ip::is_vector_or_list</a></div><div class="ttdef"><b>Definition</b> traits.hpp:30</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
